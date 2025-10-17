@@ -99,10 +99,43 @@ def add_transaction():
             'message': str(e)
         }), 400
 
+
+# In-memory user store (for demo only, not for production)
+users = {
+    "ruby": {"email": "ruby@gmail.com", "password": "password123"},
+    "okla": {"email": "okla@gmail.com", "password": "Password@123"}
+}
+
 @app.route('/api/users/login', methods=['POST'])
 def login():
-    # your login logic here
-    return jsonify({"message": "Login successful"})
+    data = request.get_json()
+    username = data.get('username')
+    password = data.get('password')
+    user = users.get(username)
+    if user and user['password'] == password:
+        return jsonify({"message": "Login successful"}), 200
+    return jsonify({"error": "Invalid credentials"}), 401
+
+@app.route('/api/users/check-email/<email>', methods=['GET'])
+def check_email(email):
+    for user in users.values():
+        if user['email'] == email:
+            return jsonify({"exists": True})
+    return jsonify({"exists": False})
+
+@app.route('/api/users/signup', methods=['POST'])
+def signup():
+    data = request.get_json()
+    username = data.get('username')
+    email = data.get('email')
+    password = data.get('password')
+    if username in users:
+        return jsonify({"error": "User already exists"}), 409
+    for user in users.values():
+        if user['email'] == email:
+            return jsonify({"error": "Email already registered"}), 409
+    users[username] = {"email": email, "password": password}
+    return jsonify({"message": "Signup successful"}), 201
 
 @app.route('/', methods=['GET'])
 def index():
