@@ -99,6 +99,31 @@ def add_transaction():
             'message': str(e)
         }), 400
 
+@app.route('/api/users/login', methods=['POST'])
+def login():
+    """Handle user login"""
+    try:
+        data = request.json
+        username = data.get('username', '')
+        password = data.get('password', '')
+        
+        # For now, just return the received data (username and password)
+        # Implement actual login logic here
+        return jsonify({
+            'success': True,
+            'message': 'Login successful',
+            'data': {
+                'username': username,
+                'password': password  # In practice, never return the password
+            }
+        }), 200
+        
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'message': str(e)
+        }), 400
+
 @app.route('/', methods=['GET'])
 def index():
     """API info"""
@@ -111,8 +136,4 @@ def index():
     })
 
 if __name__ == "__main__":
-    print(f"🚀 FinSight Transaction API Server running on http://localhost:8000")
-    print(f"📡 Endpoints:")
-    print(f"   GET  /api/transactions/{{username}} - Get user transactions")
-    print(f"   POST /api/transactions - Add new transaction")
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run()
