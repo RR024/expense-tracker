@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 
 @app.route('/api/transactions/<username>', methods=['GET'])
 def get_transactions(username):
@@ -101,28 +101,8 @@ def add_transaction():
 
 @app.route('/api/users/login', methods=['POST'])
 def login():
-    """Handle user login"""
-    try:
-        data = request.json
-        username = data.get('username', '')
-        password = data.get('password', '')
-        
-        # For now, just return the received data (username and password)
-        # Implement actual login logic here
-        return jsonify({
-            'success': True,
-            'message': 'Login successful',
-            'data': {
-                'username': username,
-                'password': password  # In practice, never return the password
-            }
-        }), 200
-        
-    except Exception as e:
-        return jsonify({
-            'success': False,
-            'message': str(e)
-        }), 400
+    # your login logic here
+    return jsonify({"message": "Login successful"})
 
 @app.route('/', methods=['GET'])
 def index():
