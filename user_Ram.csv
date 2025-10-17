@@ -1,0 +1,5 @@
+Date,Time,Merchant,Amount,Category,Mood,Location,Calendar_Event,Group_ID,Balance_After
+2025-10-12,21:02:11,Initial Balance,50000,Salary,Happy,,,1,50000.0
+2025-10-12,21:11:13,milk,50,Food,Neutral,chennai,,1,49950.0
+2025-10-12,21:11:56,cake,150,Shopping,Neutral,trl,,1,49800.0
+2025-10-12,21:58:20,dress,500,Shopping,Neutral,trrl,,1,49300.0
