@@ -149,5 +149,13 @@ def index():
     })
 
 if __name__ == "__main__":
+    # Print all registered routes for debugging
+    print("\n" + "="*50)
+    print("🚀 FinSight Transaction API Server running on http://localhost:8000")
+    print("📡 Registered endpoints:")
+    for rule in app.url_map.iter_rules():
+        print(f"   {rule.methods} {rule.rule}")
+    print("="*50 + "\n")
+    
     port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port, debug=False)
