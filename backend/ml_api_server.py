@@ -22,7 +22,7 @@ except Exception as e:
     ML_AVAILABLE = False
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for React frontend
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # Enable CORS for all origins
 
 # Global analyzer instance cache (one per user)
 analyzers = {}
@@ -337,6 +337,7 @@ def refresh_analysis(username):
     })
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
     print("🚀 FinSight ML API Server starting...")
     print("📡 Endpoints:")
     print("   GET  /api/ml/health - Health check")
@@ -346,6 +347,6 @@ if __name__ == '__main__':
     print("   GET  /api/ml/insights/<username> - Behavioral insights")
     print("   GET  /api/ml/risk-analysis/<username> - Risk analysis")
     print("   POST /api/ml/refresh/<username> - Refresh analysis")
-    print("\n🌐 Server running on http://localhost:5000")
+    print(f"\n🌐 Server running on http://localhost:{port}")
     
-    app.run(debug=True, port=5000, host='0.0.0.0')
+    app.run(debug=False, port=port, host='0.0.0.0')

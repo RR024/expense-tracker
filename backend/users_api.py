@@ -6,7 +6,7 @@ import os
 from urllib.parse import urlparse, parse_qs
 from datetime import datetime
 
-PORT = 8001
+PORT = int(os.environ.get('PORT', 8001))
 USERS_FILE = 'users.csv'
 
 class UsersAPIHandler(http.server.SimpleHTTPRequestHandler):

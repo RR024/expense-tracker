@@ -5,7 +5,7 @@ from datetime import datetime
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # Allow all origins for deployed app
 
 @app.route('/api/transactions/<username>', methods=['GET'])
 def get_transactions(username):
@@ -111,8 +111,9 @@ def index():
     })
 
 if __name__ == "__main__":
-    print(f"🚀 FinSight Transaction API Server running on http://localhost:8000")
+    port = int(os.environ.get('PORT', 8000))
+    print(f"🚀 FinSight Transaction API Server running on http://localhost:{port}")
     print(f"📡 Endpoints:")
     print(f"   GET  /api/transactions/{{username}} - Get user transactions")
     print(f"   POST /api/transactions - Add new transaction")
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=False)
