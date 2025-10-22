@@ -160,15 +160,16 @@ function Dashboard({ user, events }) {
     if (result.success && result.data.length > 0) {
       const formattedTransactions = result.data
         .map((t, index) => ({
-          id: index + 1,
-          date: new Date(t.Date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
-          dateObj: new Date(t.Date), // Keep date object for sorting
-          name: t.Merchant,
-          type: t.Category === 'Salary' ? 'Income' : 'Expense',
-          category: t.Category,
-          amount: parseFloat(t.Amount),
-          mood: t.Mood,
-          location: t.Location
+          id: t.id || index + 1,
+          date: new Date(t.date || t.Date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+          dateObj: new Date(t.date || t.Date), // Keep date object for sorting
+          name: t.merchant || t.Merchant,
+          type: (t.category || t.Category) === 'Salary' ? 'Income' : 'Expense',
+          category: t.category || t.Category,
+          amount: parseFloat(t.amount || t.Amount),
+          mood: t.mood || t.Mood || 'Neutral',
+          location: t.location || t.Location || '',
+          balance: t.balance_after || 0
         }))
         .sort((a, b) => b.dateObj - a.dateObj) // Sort by date, newest first
       
