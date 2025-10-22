@@ -1,0 +1,62 @@
+.falling-icons-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.falling-icons-target {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.falling-icon {
+  position: absolute;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+}
+
+.falling-icon:active {
+  cursor: grabbing;
+}
+
+/* Initial positions for icons around the hero */
+.icon-wallet-1 {
+  left: 5%;
+  top: 10%;
+}
+
+.icon-brain-1 {
+  left: 8%;
+  top: 50%;
+}
+
+.icon-shield-1 {
+  right: 5%;
+  top: 12%;
+}
+
+.icon-wallet-2 {
+  right: 7%;
+  top: 48%;
+}
+
+.icon-brain-2 {
+  left: 12%;
+  bottom: 15%;
+}
+
+.icon-shield-2 {
+  right: 10%;
+  bottom: 18%;
+}
+
+.falling-icons-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+}

@@ -1,0 +1,44 @@
+Date,Time,Merchant,Amount,Category,Mood,Location,Calendar_Event,Group_ID,Balance_After
+2025-10-11,23:46:35,grocery,500,Food,Neutral,thiruvallur,Regular,1,20525
+2024-09-01,08:30:15,Salary Credit,75000,Salary,Happy,Office,Regular,1,75000
+2024-09-01,12:45:00,Subway,350,Food,Neutral,Downtown,Regular,1,74650
+2024-09-01,18:20:30,Uber,180,Transport,Neutral,Home,Regular,1,74470
+2024-09-02,09:15:45,Starbucks,420,Food,Happy,Coffee Shop,Regular,1,74050
+2024-09-02,14:30:00,Amazon,2499,Shopping,Happy,Online,Regular,1,71551
+2024-09-02,19:45:30,Dominos Pizza,890,Food,Happy,Home,Regular,1,70661
+2024-09-03,10:00:00,Electricity Bill,1850,Bills,Neutral,Home,Regular,1,68811
+2024-09-03,15:30:00,Medical Store,650,Healthcare,Stressed,Pharmacy,Regular,1,68161
+2024-09-03,20:15:00,McDonald's,320,Food,Neutral,Mall,Regular,1,67841
+2024-09-04,08:45:00,Petrol Pump,2500,Transport,Neutral,Gas Station,Regular,1,65341
+2024-09-04,13:20:00,Lifestyle Store,3200,Shopping,Happy,Mall,Regular,1,62141
+2024-09-04,18:00:00,Movie Tickets,800,Entertainment,Happy,Cinema,Regular,1,61341
+2024-09-05,09:30:00,Grocery Store,4500,Food,Neutral,Supermarket,Regular,1,56841
+2024-09-05,16:45:00,Cafe Coffee Day,280,Food,Happy,Cafe,Regular,1,56561
+2024-09-06,11:00:00,Zomato,650,Food,Neutral,Home,Regular,1,55911
+2024-09-06,17:30:00,Spotify Premium,119,Entertainment,Happy,Online,Regular,1,55792
+2024-09-07,10:15:00,Big Bazaar,2800,Shopping,Neutral,Mall,Weekend,1,52992
+2024-09-07,14:00:00,KFC,550,Food,Happy,Food Court,Weekend,1,52442
+2024-09-07,19:30:00,Swiggy,480,Food,Neutral,Home,Weekend,1,51962
+2024-09-08,08:00:00,Uber,220,Transport,Neutral,Office,Weekend,1,51742
+2024-09-08,12:30:00,Lunch Buffet,750,Food,Happy,Restaurant,Weekend,1,50992
+2024-09-08,18:45:00,Reliance Fresh,1200,Food,Neutral,Supermarket,Weekend,1,49792
+2024-09-09,09:00:00,Internet Bill,999,Bills,Neutral,Home,Regular,1,48793
+2024-09-09,15:30:00,Bookstore,890,Shopping,Happy,Mall,Regular,1,47903
+2024-09-09,20:00:00,Pizza Hut,920,Food,Happy,Restaurant,Regular,1,46983
+2024-09-10,10:30:00,Mobile Recharge,399,Bills,Neutral,Online,Regular,1,46584
+2024-09-10,16:00:00,Nike Store,5499,Shopping,Happy,Mall,Regular,1,41085
+2024-09-11,11:45:00,Barista,340,Food,Neutral,Cafe,Regular,1,40745
+2024-09-11,17:15:00,Pharmacy,420,Healthcare,Stressed,Medical,Regular,1,40325
+2024-09-12,09:20:00,Petrol,2200,Transport,Neutral,Gas Station,Regular,1,38125
+2024-09-12,14:30:00,Sephora,3200,Shopping,Happy,Mall,Regular,1,34925
+2024-09-12,19:00:00,Dinner,1500,Food,Happy,Fine Dining,Regular,1,33425
+2024-09-13,10:00:00,DMart,3500,Food,Neutral,Supermarket,Regular,1,29925
+2024-09-13,15:45:00,Ice Cream Parlor,380,Food,Happy,Mall,Regular,1,29545
+2024-09-14,08:30:00,Gym Membership,2500,Healthcare,Neutral,Gym,Weekend,1,27045
+2024-09-14,12:00:00,Haldiram's,450,Food,Neutral,Restaurant,Weekend,1,26595
+2024-09-14,18:30:00,Zara,4200,Shopping,Happy,Mall,Weekend,1,22395
+2024-09-15,09:15:00,Water Bill,850,Bills,Neutral,Home,Weekend,1,21545
+2024-09-15,13:30:00,Breakfast Cafe,520,Food,Happy,Cafe,Weekend,1,21025
+2025-10-12,00:05:32,Test Coffee,150,Food,Happy,Test City,Regular
+2025-10-12,00:12:31,cake,400,Food,Neutral,thiruvallur,
+2025-10-12,00:12:53,biscuit,10,Food,Neutral,chennai,

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinSight - Financial Dashboard</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #020617;
+        color: white;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      .loading-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #020617;
+        color: white;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="loading-fallback">
+        <div>
+          <h1>Loading FinSight...</h1>
+          <p>If this message persists, please check the browser console (F12) for errors.</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
