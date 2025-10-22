@@ -26,6 +26,7 @@ export const transactionAPI = {
   // Add a new transaction
   async addTransaction(transactionData) {
     try {
+      console.log('📤 Adding transaction:', transactionData)
       const username = transactionData.username
       
       // Get last balance
@@ -37,6 +38,7 @@ export const transactionAPI = {
         .limit(1)
         .single()
       
+      console.log('💰 Last balance:', lastTransaction?.balance_after || 0)
       const lastBalance = lastTransaction?.balance_after || 0
       
       // Calculate new balance
@@ -45,6 +47,8 @@ export const transactionAPI = {
       const newBalance = (category === 'Salary' || category === 'Income')
         ? lastBalance + amount
         : lastBalance - amount
+      
+      console.log('➕ New balance will be:', newBalance)
       
       // Insert new transaction
       const { data, error } = await supabase
@@ -68,17 +72,18 @@ export const transactionAPI = {
         .single()
       
       if (error) {
-        console.error('Error adding transaction:', error)
+        console.error('❌ Error adding transaction:', error)
         return { success: false, message: error.message }
       }
       
+      console.log('✅ Transaction added:', data)
       return {
         success: true,
         message: `Transaction saved successfully for ${username}`,
         data: data
       }
     } catch (error) {
-      console.error('Error adding transaction:', error)
+      console.error('❌ Error adding transaction:', error)
       return { success: false, message: error.message }
     }
   }

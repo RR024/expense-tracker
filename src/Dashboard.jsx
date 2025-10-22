@@ -221,12 +221,16 @@ function Dashboard({ user, events }) {
       const result = await transactionAPI.addTransaction(backendData)
       if (result.success) {
         console.log('✅ Initial income saved to backend:', result.message)
+        // Reload transactions from backend
+        await loadTransactionsFromBackend()
       } else {
         console.error('❌ Backend save failed:', result.message)
       }
+    } else {
+      // Only set local state if not using backend
+      setTransactions([incomeTransaction])
     }
 
-    setTransactions([incomeTransaction])
     setShowInitialIncomeModal(false)
     setInitialIncome('')
   }
@@ -264,12 +268,16 @@ function Dashboard({ user, events }) {
       const result = await transactionAPI.addTransaction(backendData)
       if (result.success) {
         console.log('✅ Income updated and saved to backend:', result.message)
+        // Reload transactions from backend
+        await loadTransactionsFromBackend()
       } else {
         console.error('❌ Backend save failed:', result.message)
       }
+    } else {
+      // Only set local state if not using backend
+      setTransactions([...transactions, incomeTransaction])
     }
 
-    setTransactions([...transactions, incomeTransaction])
     setShowUpdateIncomeModal(false)
     setUpdateIncomeData({
       amount: '',
@@ -311,12 +319,15 @@ function Dashboard({ user, events }) {
       const result = await transactionAPI.addTransaction(backendData)
       if (result.success) {
         console.log('✅ Saved to backend:', result.message)
+        // Reload transactions from backend to get updated data
+        await loadTransactionsFromBackend()
       } else {
         console.error('❌ Backend save failed:', result.message)
       }
+    } else {
+      // Only add to local state if not using backend
+      setTransactions([...transactions, newTransaction])
     }
-
-    setTransactions([...transactions, newTransaction])
     
     // Reset form
     setFormData({
