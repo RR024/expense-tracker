@@ -414,9 +414,11 @@ function Dashboard({ user, events }) {
 
   // Filter transactions based on search and category
   const filteredTransactions = transactions.filter(transaction => {
-    const matchesSearch = transaction.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          transaction.category.toLowerCase().includes(searchTerm.toLowerCase())
-    const matchesCategory = categoryFilter === 'All Categories' || transaction.category === categoryFilter
+    const name = transaction.merchant || transaction.name || ''
+    const category = transaction.category || ''
+    const matchesSearch = name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          category.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesCategory = categoryFilter === 'All Categories' || category === categoryFilter
     return matchesSearch && matchesCategory
   })
 
